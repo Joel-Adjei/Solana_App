@@ -6,11 +6,17 @@ export default defineConfig({
   plugins: [react()],
   base: process.env.VITE_BASE_PATH || "/Solana_App",
   optimizeDeps: {
-    include: ['@solana/web3.js'],
+    include: [
+        '@solana/web3.js',
+        'react-toastify'
+      ],
   },
   build: {
     rollupOptions: {
-      external: ['@solana/web3.js'],
+      external: [
+        '@solana/web3.js',
+        'react-toastify'
+      ],
     },
   },
 })
