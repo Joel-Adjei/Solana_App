@@ -9,7 +9,11 @@ export default defineConfig({
     include: [
         '@solana/web3.js',
         'react-toastify',
-        '@solana/wallet-adapter-wallets'
+        '@solana/wallet-adapter-wallets',
+      '@solana/wallet-adapter-react',
+      '@solana/wallet-adapter-base',
+      '@solana/wallet-adapter-react-ui',
+      '@solana/spl-token'
       ],
   },
   build: {
@@ -17,7 +21,11 @@ export default defineConfig({
       external: [
         '@solana/web3.js',
         'react-toastify',
-        '@solana/wallet-adapter-wallets'
+        '@solana/wallet-adapter-wallets',
+        '@solana/wallet-adapter-react',
+      '@solana/wallet-adapter-base',
+      '@solana/wallet-adapter-react-ui',
+      '@solana/spl-token'
       ],
     },
   },
