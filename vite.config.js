@@ -8,14 +8,16 @@ export default defineConfig({
   optimizeDeps: {
     include: [
         '@solana/web3.js',
-        'react-toastify'
+        'react-toastify',
+        '@solana/wallet-adapter-wallets'
       ],
   },
   build: {
     rollupOptions: {
       external: [
         '@solana/web3.js',
-        'react-toastify'
+        'react-toastify',
+        '@solana/wallet-adapter-wallets'
       ],
     },
   },
