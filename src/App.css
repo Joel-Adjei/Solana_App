@@ -50,7 +50,6 @@ header {
 header h1 {
   font-size: 5rem;
   font-weight: 700;
-  margin-bottom: 30px;
   text-align: center;
   line-height: 5.2rem;
   padding: 10px 0;
@@ -58,6 +57,11 @@ header h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
+
+}
+
+header p{
+  font-size: 1.1rem;
 }
 @media (max-width: 560px){
   header h1{
@@ -65,7 +69,26 @@ header h1 {
     line-height: 45px;
     margin-bottom: 10px;
   }
+  header{
+    padding: 0 20px;
+  }
 
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #471893;
+  padding: 0 20px;
+}
+.navbar h3{
+  font-size: 15px;
+  margin-left: 10px;
 }
 
 main {
@@ -73,56 +96,14 @@ main {
 }
 
 .icon{
-  height: 200px;
-  width: 200px;
+  height: 340px;
+  width: 340px;
   background-image: url(./images/solana-logo.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.tabs {
-  display: flex;
-  border-bottom: 1px solid var(--border-color);
-  background-color: #252525;
-}
-
-.tab {
-  padding: 0.95rem 1.5rem;
-  background: none;
-  border: none;
-  color: var(--text-color);
-  font-size: 1rem;
-  cursor: pointer;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.tab:hover {
-  color: var(--secondary-color);
-}
-
-.tab.active {
-  color: var(--secondary-color);
-  font-weight: 600;
-}
-
-.tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--secondary-color);
-}
-
-.tab-content {
-  background-color: var(--card-background);
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 footer {
   margin-top: 2rem;
@@ -131,57 +112,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* .notification-section */
-.history{
-  position: absolute;
-  top: 10px;
-  right: 30px;
-  border: 1px solid ;
-  border-radius: 50px;
-}
-
-.notifi-section{
-  flex-direction: column;
-  padding: 0 20px;
-  background: var(--card-background) ;
-  z-index: 600;
-  animation: slide 0.5s ease-in-out both;
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  max-width: 60vh;
-  height: 100vh;
-  z-index: 401;
-}
-
-@keyframes slide{
-  from {transform: translateX(30vw) };
-  to { transform: translateX(0) };
-}
-
-.transparent{
-  display: none;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(35, 35, 35, 0.554);
-  top: 0;
-  z-index: 400;
-}
-
-.notifi-section button{
-  background-color: var(--border-color);
-  outline: none;
-  border: none;
-  color: var(--text-color);
-  font-size: 1.2rem;
-  padding: 15px 0;
-  cursor: pointer;
-}
-.notifi-section button:active{
-  background-color: #666;
-}
 
 .card {
   background-color: var(--card-background);
@@ -213,6 +143,7 @@ footer {
   padding: 20px;
   font-size: 1.3rem;
   border-radius: 4px;
+  margin-top: 20px;
 }
 
 .btn-primary:hover {
@@ -272,40 +203,6 @@ footer {
   border-color: var(--primary-color);
 }
 
-.wallet-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.wallet-address {
-  min-width: 300px;
-  font-family: monospace;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  padding:15px 0.5rem  ;
-  border-radius: 6px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
-.balance{
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: var(--secondary-color);
-}
-.balance span {
-  background-color: #252525;
-  padding:  0.5rem 15px;
-  font-weight: 600;
-  color: white;
-}
 
 .loading-spinner {
   display: inline-block;
@@ -324,14 +221,13 @@ footer {
 /* Responsive styles */
 @media (max-width: 768px) {
   .app-container {
-    padding: 1rem;
+    padding: 0rem;
   }
   
   header {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
-    height: 60vh;
   }
 
   .icon{
@@ -359,13 +255,12 @@ footer {
     padding: 1.5rem;
   }
   
-/*  .wallet-info {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  */
+
   .wallet-address {
     max-width: 100%;
+  }
+  .balance span{
+    font-size: 1rem;
   }
 }
 
