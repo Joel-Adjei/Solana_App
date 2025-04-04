@@ -3,7 +3,7 @@ import { Connection, PublicKey, clusterApiUrl } from '@solana/web3.js';
 import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { useWallet, WalletProvider as SolanaWalletProvider, ConnectionProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
-import '@solana/wallet-adapter-react-ui/styles.css';
+import '@solana/wallet-adapter-react-ui/styles.min.css';
 import { toast } from 'react-toastify';
 
 // Create the wallet context
